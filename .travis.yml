@@ -6,4 +6,4 @@ before_install:
   - docker build -t imagereactapp -f Dockerfile.dev .
 
 script:
-  - docker run Imagereactapp npm run test -- --coverage
+  - docker run imagereactapp npm run test -- --coverage
