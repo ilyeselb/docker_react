@@ -1,9 +1,10 @@
-sudo: require
-services :
+sudo: required
+
+services:
   - docker
 
 before_install:
-  - docker build -t imagereactapp -f Dockerfile.dev .
+  - docker build -t imagedocker-react -f Dockerfile.dev .
 
 script:
-  - docker run imagereactapp npm run test -- --coverage
+  - docker run -e CI=true imagedocker-react npm run test
